@@ -1,6 +1,7 @@
 module Main where
 
 import Morse (stringToMorse, morseToChar)
+import qualified HereMorse as H
 import Control.Monad (forever, when)
 import Data.List (intercalate)
 import Data.Traversable (traverse)
