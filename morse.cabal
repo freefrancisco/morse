@@ -11,7 +11,8 @@ copyright:           Copyright: (c) 2017 Francisco Gutierrez
 category:            Utils
 build-type:          Simple
 extra-source-files:  README.md
-data-files:          data/morseTable.txt
+data-dir:            data
+data-files:          morseTable.txt
 cabal-version:       >=1.10
 
 library
