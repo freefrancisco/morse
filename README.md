@@ -1,5 +1,6 @@
 ## What it is
 A program to convert from and to morse code, done as an exercise from the book [Haskell Programming From First Principles](http://haskellbook.com/).
+Also playing around with other haskell concepts, just a fun beginner program to play around with for me.  
 
 
 ## Install
@@ -13,9 +14,9 @@ After that download repository and build it:
     stack build
 
 ## Usage
-Enter the string you want to encode or decode to morse as a pipe to ````stack exec morse```` with the parameter "to" or "from" depending of whether you want to encode or decode.  
+Echo the string you want to encode or decode to morse as a pipe to ````stack exec morse```` with the parameter "to" or "from" depending of whether you want to encode or decode.  
 
 ## Examples
 
-    "hello" | stack exec morse to
-    "... --- ..." | stack exec morse from
+    echo hello | stack exec morse to
+    echo "... --- ..." | stack exec morse from
