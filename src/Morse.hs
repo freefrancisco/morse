@@ -5,9 +5,12 @@ module Morse
   , stringToMorse
   , letterToMorse
   , morseToLetter
-  ) where
+  , letterToMorse'
+  )
+  where
 
 import qualified Data.Map as M
+import Data.Char (toLower)
 
 type Morse = String
 
@@ -39,6 +42,7 @@ letterToMorse = M.fromList [
     , ('k', "-.-")
     , ('l', ".-..")
     , ('m', "--")
+    , ('n', "-.")
     , ('o', "---")
     , ('p', ".--.")
     , ('q', "--.-")
@@ -62,3 +66,15 @@ letterToMorse = M.fromList [
     , ('9', "----.")
     , ('0', "-----")
     ]
+
+-- If we wanted to read the morse info from a file instead of entering it by hand
+letterToMorse' :: IO (M.Map Char Morse)
+letterToMorse' = do
+  morse <- readFile "data/morseTable.txt"
+  return $ stringToMap morse
+
+stringToMap :: String -> M.Map Char Morse
+stringToMap = M.fromList . fmap (mktuple . words) . lines
+
+mktuple :: [String] -> (Char, Morse)
+mktuple ((x:xs): y : _) = (toLower x, y)
