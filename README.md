@@ -9,7 +9,7 @@ You need to have haskell stack installed.  If you are in a mac using homebrew ju
 
 After that download repository and build it:
 
-    git clone git@github.com/freefrancisco/morse
+    git clone git@github.com:freefrancisco/morse.git
     cd morse
     stack build
 
